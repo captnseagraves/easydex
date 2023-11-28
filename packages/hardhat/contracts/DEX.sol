@@ -76,7 +76,16 @@ contract DEX {
 	 * @return totalLiquidity is the number of LPTs minting as a result of deposits made to DEX contract
 	 * NOTE: since ratio is 1:1, this is fine to initialize the totalLiquidity (wrt to balloons) as equal to eth balance of contract.
 	 */
-	function init(uint256 tokens) public payable returns (uint256) {}
+	function init(uint256 tokens) public payable returns (uint256) {
+		require(totalLiquidity == 0, "DEX: init - already has liquidity");
+		totalLiquidity = address(this).balance;
+		liquidity[msg.sender] = totalLiquidity;
+		require(
+			token.transferFrom(msg.sender, address(this), tokens),
+			"DEX: init - transfer did not transact"
+		);
+		return totalLiquidity;
+	}
 
 	/**
 	 * @notice returns yOutput, or yDelta for xInput (or xDelta)
@@ -94,7 +103,9 @@ contract DEX {
 	 * NOTE: if you are using a mapping liquidity, then you can use `return liquidity[lp]` to get the liquidity for a user.
 	 * NOTE: if you will be submitting the challenge make sure to implement this function as it is used in the tests.
 	 */
-	function getLiquidity(address lp) public view returns (uint256) {}
+	function getLiquidity(address lp) public view returns (uint256) {
+		return liquidity[lp];
+	}
 
 	/**
 	 * @notice sends Ether to DEX in exchange for $BAL

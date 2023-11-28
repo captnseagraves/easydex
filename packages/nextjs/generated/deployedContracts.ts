@@ -5,7 +5,7 @@ const contracts = {
       name: "localhost",
       contracts: {
         Balloons: {
-          address: "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+          address: "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1",
           abi: [
             {
               inputs: [],
@@ -285,7 +285,7 @@ const contracts = {
           ],
         },
         DEX: {
-          address: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+          address: "0x59b670e9fA9D0A427751Af201D676719a970857b",
           abi: [
             {
               inputs: [
@@ -520,6 +520,19 @@ const contracts = {
                 },
               ],
               stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "totalLiquidity",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
               type: "function",
             },
             {
