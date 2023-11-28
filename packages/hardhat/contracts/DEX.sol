@@ -16,6 +16,12 @@ contract DEX {
 
 	IERC20 token; //instantiates the imported contract
 
+	// tracks the total liquidity in the amm
+	uint256 public totalLiquidity;
+
+	// tracks the toal liquidity prodivded by a particular address
+	mapping(address => uint256) liquidity;
+
 	/* ========== EVENTS ========== */
 
 	/**
