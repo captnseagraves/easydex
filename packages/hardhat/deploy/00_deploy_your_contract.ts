@@ -49,7 +49,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
     // paste in your front-end address here to get 10 balloons on deploy:
     await balloons.transfer(
         "0x5Ad3b55625553CEf54D7561cD256658537d54AAd",
-        "" + 10 * 10 ** 18
+        "" + 100000 * 10 ** 18
     );
 
 
