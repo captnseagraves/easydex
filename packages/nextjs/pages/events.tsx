@@ -9,31 +9,31 @@ const Events: NextPage = () => {
   const { data: EthToTokenEvents, isLoading: isEthToTokenEventsLoading } = useScaffoldEventHistory({
     contractName: "DEX",
     eventName: "EthToTokenSwap",
-    fromBlock: 0n,
+    fromBlock: 4791449n,
   });
 
   const { data: tokenToEthEvents, isLoading: isTokenToEthEventsLoading } = useScaffoldEventHistory({
     contractName: "DEX",
     eventName: "TokenToEthSwap",
-    fromBlock: 0n,
+    fromBlock: 4791449n,
   });
 
   const { data: liquidityProvidedEvents, isLoading: isLiquidityProvidedEventsLoading } = useScaffoldEventHistory({
     contractName: "DEX",
     eventName: "LiquidityProvided",
-    fromBlock: 0n,
+    fromBlock: 4791449n,
   });
 
   const { data: liquidityRemovedEvents, isLoading: isLiquidityRemovedEventsLoading } = useScaffoldEventHistory({
     contractName: "DEX",
     eventName: "LiquidityRemoved",
-    fromBlock: 0n,
+    fromBlock: 4791449n,
   });
 
   const { data: approvalEvents, isLoading: isApprovalEventsLoading } = useScaffoldEventHistory({
     contractName: "Balloons",
     eventName: "Approval",
-    fromBlock: 0n,
+    fromBlock: 4791449n,
   });
 
   return (
