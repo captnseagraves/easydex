@@ -285,7 +285,7 @@ const contracts = {
           ],
         },
         DEX: {
-          address: "0x59b670e9fA9D0A427751Af201D676719a970857b",
+          address: "0x9E545E3C0baAB3E08CdfD552C960A1050f373042",
           abi: [
             {
               inputs: [
@@ -547,12 +547,12 @@ const contracts = {
               outputs: [
                 {
                   internalType: "uint256",
-                  name: "eth_amount",
+                  name: "ethWithdrawn",
                   type: "uint256",
                 },
                 {
                   internalType: "uint256",
-                  name: "token_amount",
+                  name: "tokenAmount",
                   type: "uint256",
                 },
               ],
